@@ -1,6 +1,10 @@
 <template>
 	<nav class='tabs'>
 		<router-link class='tab' v-for='(item,index) in dataList' :key='index' :to='item.path'>
+			<i class='iconfont' v-if='index==0' style='font-size:30px;'>&#xe722;</i>
+			<i class='iconfont' v-else-if='index==1' style='font-size:19px;'>&#xe612;</i>
+			<i class='iconfont' v-else-if='index==2' style='font-size:18px;'>&#xe606;</i>
+			<i class='iconfont' v-else-if='index==3' style='font-size:15px;'>&#xe621;</i>
 			{{item.title}}
 		</router-link>
 	</nav>
@@ -28,7 +32,7 @@
 		bottom:0;
 		left:0;
 		height:49px;
-		line-height:49px;
+		line-height:18px;
 		display:flex;
 		width:100%;
 	}
@@ -37,7 +41,11 @@
 		text-align:center;
 		color:#8e8e93;
 		background:#fff;
-		font-weight:bolder;
+		display:flex;
+		font-size:15px;
+		flex-direction: column;
+		justify-content: center;
+		align-items:center;
 	}
 	.tabs:before{
 		content:'';
